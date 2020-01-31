@@ -54,6 +54,7 @@
 .LINK
  	https://www.linkedin.com/in/nan-zhang-60425223
 #>
+#Requires -Modules Posh-IBWAPI
 [cmdletbinding()]
 param (
 	[Parameter(ValueFromPipeline=$true,ValueFromPipelineByPropertyName=$true)]
