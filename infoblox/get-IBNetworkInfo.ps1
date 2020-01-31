@@ -128,7 +128,6 @@ if ( -not (get-variable -name ibnetworks -ea silentlycontinue) -or -not (get-var
 		set-IBWAPIConfig -WAPIHost $ipamhost -WAPIVersion 2.1 -credential $credential -IgnoreCertificateValidation
 	}
 
-
 	write-host -fore yellow "Loading network information from IPAM"
 	$global:ibnetworks = Get-IBObject -ObjectType 'network' -ReturnFields "network_container" -ReturnBaseFields
 
