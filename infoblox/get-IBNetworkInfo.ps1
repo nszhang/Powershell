@@ -103,10 +103,12 @@ function show-Result {
 	switch ($typeMessage) {
 		"network" {
 			write-host -fore yellow "------------- $typeMessage -------------" 
+			break
 		}
 
 		"network containers" {
 			write-host -fore yellow "------------- $typeMessage -------------" 
+			break
 		}
 	}
 
@@ -173,7 +175,6 @@ try {
 		}
 
 		"Print" {
-
 			print-IBNetwork $network 0
 		}
 	}
