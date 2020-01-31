@@ -3,16 +3,16 @@
 	Author: Nan Zhang
 	  Date: April 10, 2019
 .SYNOPSIS
-	Print out the IB network tree
+	Print or search the IB network tree
 .DESCRIPTION
-	Print out the IB network tree
+	Print or search the IB network tree
 	The network data is obtained a first time and then it is saved (cached) in two variables ibnetwork (for networks) and ibnetworkcontainers (for network containers). To get the latest network information from the Infoblox grid, use the -refresh parameter.
 .PARAMETER ipamhost
 	IPAM host containing the network information
 .PARAMETER credential
 	Credential to connect to ipam host
 .PARAMETER credentialFile
-	Credential file containing the credential
+	File containing the credential via export-clixml.
 .PARAMETER network
 	Network to search
 .PARAMETER refresh
