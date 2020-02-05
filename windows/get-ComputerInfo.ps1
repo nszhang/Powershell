@@ -205,7 +205,7 @@ begin {
 					} else {
 						$status = $machine + " is not available."
 
-						if ( $pingInfo.StatusCode -ne $null ) {
+						if ($null -ne $pingInfo.StatusCode ) {
 							$status += " Ping error: "
 							switch ($pingInfo.StatusCode ) {
 								11001	   { $status += "Buffer Too Small" }
@@ -231,7 +231,7 @@ begin {
 								default	   { $status += "Unknown(1)" }
 							}
 						} else {
-							if ( $pingInfo.ResolveAddressNames -ne $null -and
+							if ( $null -ne $pingInfo.ResolveAddressNames -and
 								$pingInfo.ResolveAddressNames -eq $false 	) {
 								$status = "Unable to resolve hostname"
 							} else {
@@ -767,9 +767,9 @@ begin {
 				$computersystem = get-wmiobject @wmiargs -query "select * from win32_computersystem" -ErrorAction SilentlyContinue
 
 				$win32bios = get-wmiobject @wmiargs -query "Select serialnumber from win32_bios" -ErrorAction SilentlyContinue | `
-					select -first 1 serialnumber
+					select-object -first 1 serialnumber
 
-				$osBit = get-wmiobject @wmiargs -query "select addressWidth from win32_Processor" -ErrorAction SilentlyContinue | select -first 1 addressWidth
+				$osBit = get-wmiobject @wmiargs -query "select addressWidth from win32_Processor" -ErrorAction SilentlyContinue | Select-Object -first 1 addressWidth
 
 				# NSZ05
 				$disks = get-wmiobject @wmiargs -query "select driveletter, name, FreeSpace, capacity, drivetype from win32_volume" -ErrorAction silentlyContinue 
